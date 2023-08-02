@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.5;
+background-color: #181818;
+color: white;
+  }
+
+header{
+    font-size: 25px;   
+    font-weight: bold; 
+}
+
+header {
+    color: rgb(255, 255, 255);
+    margin: 10px;
+    font-size: 1.8em;
+    font-weight: thin;
+    margin: 0;
+  }
+  
+*{
+    scroll-behavior: smooth;
+}
+mark{
+    background-color: #a5a5a571;
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+}
+img{
+    width: 600px;
+  height: auto;
+}
+
+
+main{
+    margin-top: 20px;
+    margin-left:350px ;
+    margin-right: 40px;
+}
+
+ 
+#navbar {
+    border-right: solid;
+  border-color: rgba(0, 22, 22, 0.4);
+    width: 300px; 
+    height: 200vh; 
+    background-color: #181818;
+    position: fixed;
+    margin-right: 40px;
+    float: left; 
+  }
+  #navheader{
+    text-align: center;
+  }
+  #navbar ul {
+    list-style: none;
+    padding: 0;
+    height: 88%;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  }
+  
+  #navbar li {
+    padding: 10px;
+    color: #ffffff;
+  border-top: 1px solid;
+  list-style: none;
+  position: relative;
+  width: 100%;
+  }
+  section li {
+    margin: 15px 0px 0px 20px;
+  }
+  section article {
+    color: #bcbdc1;
+    margin: 15px;
+    font-size: 0.96em;
+  }
+  #navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+  }
+  
+  #navbar li:hover {
+    background-color: #ddd;
+  }
+  #navbar a:hover{
+    color: black;
+  }
+  
+  code {
+    display: block;
+    text-align: left;
+    white-space: pre-line;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #282727;
+    padding: 15px;
+    color: white;
+    margin: 10px;
+    border-radius: 5px;
+  }
+
+  @media (max-width:897px){
+    #navbar{
+      width: 250px;
+      margin: 0;
+    height: 200vh; 
+    position: fixed;
+    margin-right: 40px;
+    float: left;
+    }
+    *{
+     margin-right: 0;
+    }
+  }
+ 
+  @media (max-width:818px){
+    main{
+      margin-right:0 ;
+      width: 500px;
+    }
+    #navbar{
+      width: 200px;
+      margin: 0;
+      font-size: small;
+    height: 200vh; 
+    position: fixed;
+    float: left;
+    }
+  }
+
+  @media (max-width:375px){
+    *{
+      font-size: small;
+    }
+    main{
+      margin-right:0 ;
+      width: 500px;
+    }
+    #navbar{
+      width: 200px;
+      margin: 0;
+      font-size: small;
+    height: 200vh; 
+    position: fixed;
+    float: left;
+    }
+    img{
+      height: 200px;
+      width: auto;
+    }
+  }

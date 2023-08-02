@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header id="navheader">Cascading Style Sheets</header>
+        <ul>
+            <li>
+                <a href="#Introduction" class="nav-link">Introduction</a>
+            </li>
+            <li>
+                <a href="#What_is_CSS?" class="nav-link">What is CSS?</a>
+            </li>
+            <li>
+                <a href="#Anatomy_of_a_CSS_ruleset" class="nav-link">Anatomy of a CSS ruleset</a>
+            </li>
+            <li>
+                <a href="#Selecting_multiple_elements" class="nav-link">Selecting multiple elements</a>
+            </li>
+            <li>
+                <a href="#Fonts_and_text" class="nav-link">Fonts and text</a>
+            </li>
+            <li>
+                <a href="#CSS:_all_about_boxes" class="nav-link">CSS: all about boxes</a>
+            </li>
+            <li>
+                <a href="#Changing_the_page_color" class="nav-link">Changing the page color</a>
+            </li>
+            <li>
+                <a href="#Styling_the_body" class="nav-link">Styling the body</a>
+            </li>
+            <li>
+                <a href="#Centering_the_image" class="nav-link">Centering the image</a>
+            </li>
+            <li>
+                <a href="#Reference" class="nav-link">Reference</a>
+            </li>
+
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <article>
+                <p>CSS (Cascading Style Sheets) is the code that styles web content. 
+                    CSS basics walks through what you need to get started. We'll answer 
+                    questions like: How do I make text red? How do I make content display 
+                    at a certain location in the (webpage) layout? How do I decorate my webpage 
+                    with background images and colors?</p>
+                <P></P>
+            </article>
+        <section class="main-section" id="What_is_CSS?">
+            <header>What is CSS?</header>
+            <article>
+                <p>Like HTML, CSS is not a programming language. It's not a markup 
+                    language either. CSS is a style sheet language. CSS is what you use
+                    to selectively style HTML elements. For example, this CSS selects paragraph
+                     text, setting the color to red:</p>
+                <pre>
+                    <code>p { 
+                        color: red;
+                      }
+                      </code>
+                </pre>
+                
+                  <p>Let's try it out! Using a text editor, paste the three lines of CSS 
+                    (above) into a new file. Save the file as style.css in a directory named styles.</p>
+                  <p>To make the code work, we still need to apply this CSS (above) 
+                    to your HTML document. Otherwise, the styling won't change the appearance of the HTML.
+                     (If you haven't been following our project, pause here to read Dealing with files and HTML basics.)</p>
+                  <ol>
+                    <li>Open your index.html file. Paste the following line in the head (between the &lt;head> and &lt;/head> tags):
+                        <pre>
+                            <code>
+                                &lt;link href="styles/style.css" rel="stylesheet" />
+                            </code>
+                        </pre>
+                    </li>
+                    <li>Save <mark>index.html</mark> and load it in your browser.</li>
+
+                  </ol>
+            </article>
+        <section class="main-section" id="Anatomy_of_a_CSS_ruleset">
+            <header>Anatomy of a CSS ruleset</header>
+            <article>
+                <p>Let's dissect the CSS code for red paragraph text to understand how it works:</p>
+                <img src="css-declaration-small.png" alt="css">
+                <p>The whole structure is called a ruleset. (The term ruleset is often referred to as just rule.)
+                     Note the names of the individual parts:</p>
+                <dl>
+                    <dt id="selector">Selector</dt>
+                    <dd>
+                        <p>This is the HTML element name at the start of the ruleset. 
+                            It defines the element(s) to be styled (in this example, &lt;p> elements). 
+                            To style a different element, change the selector.</p>
+                    </dd>
+
+                    <dt id="declaration">Declaration</dt>
+                    <dd>
+                        <p>This is a single rule like color: red;. 
+                            It specifies which of the element's properties you want to style.</p>
+                    </dd>
+                    <dt id="properties">Properties</dt>
+                    <dd>
+                        <p>These are ways in which you can style an HTML element.
+                             (In this example, color is a property of the &lt;p> elements.)
+                              In CSS, you choose which properties you want to affect in the rule.</p>
+                    </dd>
+                    
+                    <dt id="Property value">Property value</dt>
+                    <dd>
+                        <p>To the right of the property—after the colon—there 
+                            is the property value. This chooses one out of many possible
+                             appearances for a given property. (For example, there are many color 
+                             values in addition to red.)</p>
+                    </dd>
+                </dl>
+
+                <p>Note the other important parts of the syntax:</p>
+                <ul>
+                    <li>Apart from the selector, each ruleset must be wrapped in curly braces. <mark>({})</mark></li>
+                    <li>Within each declaration, you must use a colon <mark>(:)</mark> to separate the property from its value or values.</li>
+                    <li>Within each ruleset, you must use a semicolon <mark>(;)</mark> to separate each declaration from the next one.</li>
+                </ul>
+                <p>To modify multiple property values in one ruleset, write them separated by semicolons, like this:</p>
+                <pre>
+                    <code>
+                        p {
+                            color: red;
+                            width: 500px;
+                            border: 1px solid black;
+                          }
+                          
+                    </code>
+                </pre>
+        
+            </article>
+        <section class="main-section" id="Selecting_multiple_elements">
+            <header>Selecting multiple elements</header>
+            <article>
+                <p>You can also select multiple elements and apply a single ruleset to all of them. Separate multiple selectors by commas. For example:</p>
+                <pre>
+                    <code>
+                        p,
+                        li,
+                        h1 {
+                            color: red;
+                        }
+                    </code>
+                </pre>
+            </article>
+
+
+        <section class="main-section" id="Fonts_and_text">
+            <header>Fonts and text</header>
+            <article>
+                <p>Now that we've explored some CSS fundamentals, 
+                    let's improve the appearance of the example by 
+                    adding more rules and information to the <mark>style.css</mark> file.</p>   
+                <ol>
+                    <li>First, find the output from Google Fonts that 
+                        you previously saved from What will your website 
+                        look like?. Add the <mark>&lt;link></mark> element somewhere inside
+                         your <mark>index.html's</mark> head (anywhere between the <mark>&lt;head></mark>
+                         and <mark>&lt;/head></mark> tags). It looks something like this:
+                        <pre>
+                            <code>
+                                &lt;link
+                                    href="https://fonts.googleapis.com/css?family=Open+Sans"
+                                    rel="stylesheet" />
+                            </code>
+                        </pre>
+                        This code links your page to a style sheet that loads
+                         the Open Sans font family with your webpage.
+                    </li>
+
+                    <li>Next, delete the existing rule you have in your <mark>style.css</mark> 
+                        file. It was a good test, but let's not continue with lots of red text.</li>
+                    <li>Add the following lines (shown below), replacing the font-family
+                         assignment with your font-family selection from What will your
+                          website look like?. The property font-family refers to the font(s) 
+                          you want to use for text. This rule defines a global base font and 
+                          font size for the whole page. Since &lt;html> is the parent element 
+                          of the whole page, all elements inside it inherit the same font-size and font-family.
+                        <pre>
+                            <code>
+                                html {
+                                    font-size: 10px; /* px means "pixels": the base font 
+                                    size is now 10 pixels high */
+                                    font-family: "Open Sans", sans-serif; /* this should be 
+                                    the rest of the output you got from Google Fonts */
+                                  }
+                            </code>
+                        </pre>
+                    </li>
+                    <li>Now let's set font sizes for elements that will have text inside the
+                         HTML body (<mark>h1</mark>, <mark>&lt;li></mark>, and <mark>&lt;p></mark>). We'll also center the heading. 
+                         Finally, let's expand the second ruleset (below) with settings for 
+                         line height and letter spacing to make body content more readable.
+                        <pre>
+                            <code>
+                                h1 {
+                                    font-size: 60px;
+                                    text-align: center;
+                                  }
+                                  
+                                  p,
+                                  li {
+                                    font-size: 16px;
+                                    line-height: 2;
+                                    letter-spacing: 1px;
+                                  }                                  
+                            </code>
+                        </pre>
+                    </li>  
+                </ol>
+            </article>
+
+        <section class="main-section" id="CSS:_all_about_boxes">
+            <header>CSS: all about boxes</header>
+            <article>
+                <p>Something you'll notice about writing CSS:
+                     a lot of it is about boxes. This includes
+                      setting size, color, and position. Most 
+                      HTML elements on your page can be thought
+                       of as boxes sitting on top of other boxes.
+                </p>
+                <p>CSS layout is mostly based on the box model. Each 
+                    box taking up space on your page has properties like:
+                </p>
+                
+                <ul>
+                    <li><mark>padding</mark>, the space around the content. In the example below, 
+                        it is the space around the paragraph text.</li>
+                    <li><mark>border</mark>, the solid line that is just outside the padding.</li>
+                    <li><mark>margin</mark>, the space around the outside of the border.</li>
+                </ul>
+                <img src="box-model.png" alt="box-model">
+                    <p>In this section we also use:</p>
+                    <ul>
+                        <li><mark>width</mark> (of an element).</li>
+                        <li><mark>background-color</mark>, the color behind an element's content and padding.</li>
+                        <li><mark>color</mark>, the color of an element's content (usually text).</li>
+                        <li><mark>text-shadow</mark> sets a drop shadow on the text inside an element.</li>
+                        <li><mark>display</mark> sets the display mode of an element. (keep reading to learn more)</li>
+                    </ul>
+
+                    </article>
+        <section class="main-section" id="Changing_the_page_color">
+            <header>Changing the page color</header>
+            <article>
+                <pre>
+                    <code>
+                        html {
+                            background-color: #00539f;
+                          }                          
+                    </code>
+                </pre>
+                <p>This rule sets a background color for the entire page.</p>
+            </article>
+
+        <section class="main-section" id="Styling_the_body">
+            <header>Styling the body</header>
+            <article>
+                <pre>
+                    <code>
+                        body {
+                            width: 600px;
+                            margin: 0 auto;
+                            background-color: #ff9500;
+                            padding: 0 20px 20px 20px;
+                            border: 5px solid black;
+                          }                          
+                    </code>
+                </pre>
+                <p>There are several declarations for the <mark>&lt;body></mark> element. Let's go through these line-by-line:</p>
+                <ul>
+                    <li><mark>width: 600px;</mark> This forces the body to always be 600 pixels wide.</li>
+                    <li<mark>>margin: 0 auto;</mark> When you set two values on a property like margin or padding, the first value affects the element's top and bottom side (setting it to 0 in this case); the second value affects the left and right side. (Here, auto is a special value that divides the available horizontal space evenly between left and right). You can also use one, two, three, or four values, as documented in Margin Syntax.
+                    </li>
+                    <li><mark>background-color: #FF9500;</mark> This sets the element's background color. This project uses a reddish orange for the body background color, as opposed to dark blue for the <mark>&lt;html></mark> element. (Feel free to experiment.)</li>
+                    <li><mark>padding: 0 20px 20px 20px;</mark> This sets four values for padding. The goal is to put some space around the content. In this example, there is no padding on the top of the body, and 20 pixels on the right, bottom and left. The values set top, right, bottom, left, in that order. As with margin, you can use one, two, three, or four values, as documented in Padding Syntax.</li>
+                    <li><mark>border: 5px solid black;</mark> This sets values for the width, style and color of the border. In this case, it's a five-pixel–wide, solid black border, on all sides of the body.</li>
+                </ul>
+            
+            
+            </article>
+
+            <section class="main-section" id="Centering_the_image">
+                <header>Centering the image</header>
+                <article>
+                    <pre>
+                        <code>
+                            img {
+                                display: block;
+                                margin: 0 auto;
+                              }                              
+                        </code>
+                    </pre>
+                    <p>Next, we center the image to make it look better. We could use the margin: 0 auto trick again as we did for the body. But there are differences that require an additional setting to make the CSS work.</p>
+                    <p>The <mark>&lt;body></mark> is a block element, meaning it takes up space on the page. The margin applied to a block element will be respected by other elements on the page. In contrast, images are inline elements, for the auto margin trick to work on this image, we must give it block-level behavior using <mark>display: block;</mark>.</p>
+                </article>
+            
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <article>
+                <ul>
+                    <li>All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics" target="_blank">MDN</a></li>
+                </ul>
+            </article>
+
+    </main>
+</body>
+</html>
